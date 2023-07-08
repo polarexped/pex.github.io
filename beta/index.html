@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no" />
+
+  <title>Polar Exped</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4103c6dcc8.js" crossorigin="anonymous"></script>
+
+  <script>
+    const fadeElem = document.getElementsByClassName('fade-scroll');
+    var prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function () {
+      const navbar = document.getElementById("navbar");
+      const firstSection = document.getElementById("firstSection");
+      const firstSectionOffsetTop = firstSection.offsetTop - 85;
+      const currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else if (currentScrollPos >= firstSectionOffsetTop) {
+
+        var pos = firstSection.offsetTop - currentScrollPos - 85;
+        if (pos < 0) {
+          navbar.style.top = pos + "px";
+        }
+
+      }
+
+      prevScrollPos = currentScrollPos;
+      if (currentScrollPos >= 85) {
+        navbar.classList.add('navbar-top');
+      } else {
+        navbar.classList.remove('navbar-top');
+      }
+
+      Array.from(fadeElem).forEach((element) => {
+        if (currentScrollPos > element.offsetTop) {
+          element.style = "opacity: " + ((currentScrollPos - element.offsetTop) / 1100);
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggles = document.getElementsByClassName('faq-item');
+
+      Array.from(toggles).forEach((el) => {
+        el.addEventListener('click', () => {
+          el.classList.toggle('active');
+        });
+      });
+
+
+
+
+      const ele = document.getElementById('scrolling-wrapper');
+
+      ele.scrollTop = 100;
+      ele.scrollLeft = 0;
+
+
+      let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+      const mouseDownHandler = function (e) {
+        pos = {
+          // The current scroll
+          left: ele.scrollLeft,
+          top: ele.scrollTop,
+          // Get the current mouse position
+          x: e.clientX,
+          y: e.clientY,
+        };
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+
+        ele.style.cursor = 'grabbing';
+        ele.style.userSelect = 'none';
+      };
+
+      const mouseMoveHandler = function (e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+
+        // Scroll the element
+        ele.scrollTop = pos.top - dy;
+        ele.scrollLeft = pos.left - dx;
+      };
+
+      const mouseUpHandler = function () {
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+
+        ele.style.cursor = 'grab';
+        ele.style.removeProperty('user-select');
+      };
+
+      ele.addEventListener('mousedown', mouseDownHandler);
+
+
+    });
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <header class="header" id="navbar">
+    <div class="container">
+      <a href="#">
+        <img class="logo" src="/media/logo.svg" alt="Logo">
+      </a>
+      <nav class="nav">
+        <a href="#expeditions" type="button" class="btn btn-link">Expeditions</a>
+        <a href="" type="button" class="btn btn-link">About</a>
+        <a href="" type="button" class="btn btn-outline-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN HERO -->
+  <section class="hero">
+    <div class="hero-content container">
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Polar Expeditions Made Accessible</h1>
+          <h2>Stop dreaming. Start doing.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media-container">
+      <video class="media" autoplay xloop muted>
+        <source src="/media/hero4k.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+
+  <!-- FIST SECTION - DOUBLE -->
+  <section class="copy block first-section" id="firstSection">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Discover Europe's last wilderness</h1>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+          <p>
+            A Polar Expedition it doesn't have to be to the North or South pole.
+            There are places much closer to home and less extreme.
+            Northern Sweden is an amazing place that offers beautiful landscapes and is more accessible.
+            It's a place where you can look and not see anything or anyone around you - that's why they call it the
+            Europe's last wilderness.
+          </p>
+          <p>
+            You'll get to experience <b>Kungsleden</b> in an authentic way and recover in comfort.
+            For some it will be once in a lifetime trip, for others a stepping stone towards more challenging
+            expeditions.
+            One thing is guaranteed - it's going to be an unforgettable experience.
+          </p>
+        </div>
+
+        <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
+          <img class="img fade-scrollx" src="/media/kungsledenv.jpeg" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Kungsleden</h1>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+          <p>
+            Our Swedish expeditions take place on the northern section of the Kungsleden (Kings Trail).
+            The whole trail continues for 440km, but we use the best part of it and it's around 90km.
+            
+          </p>
+          <p>
+            The landscape is very beautiful but we must not forget that the weather can change in a matter of minutes.
+            It can completely shift form a sunny day to a total whiteout. If you don't know where you are and how to
+            behave,
+            you can get yourself in trouble. Luckily we come prepared. You're in good hands.
+          </p>
+          <p>
+            <b>No matter the weather - it's a meditative experience.</b><br> Just put one foot in front of the other.
+            Many times you can just let your mind go blank.
+            Even tough you're in an cold environment, you're not cold because your body generates a lot of heat through
+            of the rhythmic movement.
+            It's almost magic.
+          </p>
+
+        </div>
+
+        <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
+          <img class="img fade-scrollx" src="/media/map2.png" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- EXPEDITIONS -->
+  <section class="block" id="expeditions">
+    <div class="container">
+      <div class="row pb-0">
+        <div class="col-lg-10 col-sm-12 ">
+          <h1>Ski Touring Expeditions</h1>
+          <p>
+            We currently offer two types of (Nordic) ski touring expeditions in Sweden. Both use the same route and have
+            the same duration.
+            The main difference is accommodation - either huts or tents. Both are unique experiences with their own
+            benefits.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-md-center compare">
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+            <img class="img" src="/media/hut.jpg" />
+            <div class="compare-card-details">
+              <span>9 days</span>
+              <span>110 km</span>
+              <span>Easy</span>
+              <span>4-6 h / day</span>
+              
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Hut Tour<span class="tag">€ 1995,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" />Backpack 10-15 kg </li>
+                <li><img src="/media/check.svg" />We get most food along the way</li>
+                <li><img src="/media/check.svg" />Seep in a warm hut</li>
+                <li><img src="/media/check.svg" />Kitchen with a gas stove</li>
+                <li><img src="/media/check.svg" />Sauna included</li>
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-primary">Reserve your spot</button>
+                <small>9-18 March 2024</small>
+                <small>4 of 5 spots left</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+  
+            <img class="img" src="/media/tent.jpg" />
+
+            <div class="compare-card-details">
+              <span>9 days</span>
+              <span>110 km</span>
+              <span>Medium</span>
+              <span>5-8 h / day</span>
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Winter Camping<span class="tag">€ 2295,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" /> Pulka (sled) 30-45 kg</li>
+                <li><img src="/media/check.svg" /> We bring most of our food</li>
+                <li><img src="/media/check.svg" /> Warm sleeping bag</li>
+                <li><img src="/media/check.svg" /> Expedition stove & fuel to boil water</li>
+                <li><img src="/media/check.svg" /> Develop your Polar Expedition skills</li>
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-primary">Reserve your spot</button>
+                <small>21-30 March 2024</small>
+                <small>5 spots available</small>
+              </div>
+              <form class="hidden">
+                <br>
+                  <small>
+                    You can make a reservation for free! No strings attached.
+                    Fill in your details and we'll be in touch shortly. <br><br>
+                  </small>
+                <div class="form-row">
+
+                  <br><br>
+
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Phone">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="Any questions / remarks">
+                  </div>       
+                  
+                  <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </form>              
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-10">
+          <p>
+            <small>
+            Choosing huts means we can travel light as we don't need much equipment.
+            Four of the six huts along the trail have a small shop where you can buy food.
+            The last one, technically a mountain station, also has a restaurant.
+            Even when camping, we can choose to spend a night in a hut to warm up, dry clothes and equipment and
+            even use the sauna.
+            </small>
+          </p>
+        </div>        
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+    <!-- BENEFITS -->
+  <section class="special block">
+    <div class="container">
+      <div class="card-container">
+
+        <div class="card special">
+          <h1>Benefits</h1>
+          <p>We want to set you up for success, that's why with Polar Exped - you'll get much, much more.</p>
+          <p>Joining our expeditions comes with a lot of unique benefits. Discover some of them here.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="icon fa-solid fa-person-skiing-nordic"></i>Training Plan</h4>
+          <p>Preparing your body for the expedition is the first step towards success.
+            The better you've trained the more enjoyable your experience will be.
+          </p>
+          <p>
+            We will discuss your current fitness, help you do a realistic assessment and set up a training plan.
+          </p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-regular fa-circle-question"></i></i>Gear Assistance</h4>
+          <p>
+            Having the right gear is important. We will go trough the gear you already have and provide advice on what
+            you need and where to get it.
+          </p>
+          <p>
+            We don't send out generic copy/paste gear lists and hope for the best - like most companies.
+          </p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-solid fa-cart-shopping"></i>Deals with brands</h4>
+          <p>We're working together with some of the leading equipment
+            brands, manufactures and stores to make sure you can use the best gear possible.
+          </p>
+          <p>In many cases we can offer a special discount.</p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-regular fa-clipboard"></i>Extensive Preparation</h4>
+          <p>
+            <strong>Roald Amundsen</strong>, first man to reach both the North and South Pole said:<br> "<i>Adventure Is
+              Just Bad Planning</i>".
+          </p>
+          <p>
+            We live by these words. You can count on us to take care of all the preparations so you can enjoy the expedition.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><i class="icon fa-regular fa-heart"></i>Safety First</h4>
+          <p>
+            Being outside is not without dangers, but our focus is keeping everyone safe.
+            <strong>Planning, Gear, Education & Experience.</strong>
+            These things combined make for a successful expedition.
+          </p>
+          <p>We travel in <strong>small groups</strong> of 4-5 participants.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ALTERNATING -->
+  <section class="block hidden">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-sm-12  order-md-2">
+          <h2>Greenland Expedition</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sit quod quibusdam quasi facere repudiandae
+            ab pariatur! Ducimus beatae odio perferendis, esse aspernatur repellendus similique, animi sint cum possimus
+            neque.</p>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+          <img class="img fade-scroll" src="/media/greenland.png" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h2>Kungsleden</h2>
+          <p>
+            You'll get to experience Europe's last wilderness in an authentic way and recover in comfort.
+            For some it will be once in a lifetime trip, for others a stepping stone towards more challenging
+            expeditions.
+            One thing is guaranteed - it's going to be unforgettable.
+          </p>
+
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Learn More </span>
+          </button>
+
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <img class="img fade-scroll" src="/media/kungsleden.jpeg" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- DAY BY DAY -->
+  <section class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Day by day</h1>
+          <div class="scrolling-wrapper" id="scrolling-wrapper">
+
+            <div class="card">
+              <img src="/media/kungsleden.jpeg" height="175px" style="pointer-events: none;"/>
+              
+              <h5>Day 1</h5>
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+
+            <div class="card">
+              <img class="" src="/media/hut.jpg" height="175px" />
+              <h5>Day 2</h5>
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 3</h5>
+
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 4</h5>
+
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 5</h5>
+
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 6</h5>
+
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 7</h5>
+
+              <p>We meet in Kiruna and travel together to Abisko where we will stay for the night. 
+                We'll spend the day getting comfortable on our skis and with out safety equipment.</p>
+            </div>            
+
+
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-xl-7 col-lg-12">
+          <h1>FAQ</h1>
+        </div>
+
+        <div class="col-xl-7 col-lg-12">
+
+          <div class="faq">
+            <div class="faq-wrapper">
+
+              <div class="faq-item">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">Question</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  Hello lorem ipsum
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">Question</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  Hello lorem ipsum
+                </div>
+              </div>          
+              
+              <div class="faq-item">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">Question</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  Hello lorem ipsum
+                </div>
+              </div>   
+              
+              <div class="faq-item">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">Question</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  Hello lorem ipsum
+                </div>
+              </div>                 
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 offset-md-1 col-lg-12">
+          <div class="card faq-aside">
+            <h4>Practical Info</h4>
+            Hello world foo bar
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- WHY JOIN -->
+  <section class="copy block">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Why join an expedition?</h1>
+        </div>
+
+        <div class="col-md-8 col-sm-12">
+          <p>
+            Everyone has their own reasons for seeking out a trip like this.
+            During the golden age of exploration, seemingly ordinary men achieved extraordinary things.
+            One of the first two men that stood on top of Everest, Sir Edmund Hillary was a beekeeper by trade.
+            What made them different was the drive for exploration.
+            <br><br>
+            These days our lives are so effortless. We live in cities with everything we might desire available to us.
+            Because of our comforts we loose touch with nature and with ourselves.
+            Literally getting out of your comfort zone can help you reconnect with yourself and nature, while still having the safety and comfort of a hut or tent at night.
+            <br><br>
+            Why do you want to join? Is it the physical and mental challenge? Is it for the scenery, or just some piece
+            and quiet?
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+          <img class="img fade-scrollx" src="/media/ed.jpg" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+    <!-- ABOUT -->
+    <section class="copy block">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <h1>About Polar Exped</h1>
+          </div>
+  
+          <div class="col-md-8 col-sm-12 order-md-2">
+            <h3>Robert Lewandowski</h3>
+            <p>
+              When not on tour, Robert runs Polar Exped from his home office in Amsterdam.
+              He fell in love with Scandinavia and especially the cold arctic climate.
+
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-12 order-md-1">
+            <img class="img fade-scrollx" src="/media/profile.jpeg" />
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  
+
+  <!-- END HERO -->
+  <section class="hero">
+    <div class="hero-content container">
+
+      <div class="row">
+        <div class="col-xl-9 col-lg-12">
+          <h1>Discover the explorer within you</h1>
+          <h2>Join Polar Exped on your next expedition.</h2>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-media-container bcg-1">
+      <img src="/media/kungsleden.jpeg" class="media fade-scroll" />
+    </div>
+  </section>
+
+</body>
+
+</html>
