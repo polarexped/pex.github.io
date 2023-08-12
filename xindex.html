@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no" />
+
+  <title>Polar Exped - Polar and Arctic Expeditions made accessible</title>
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4103c6dcc8.js" crossorigin="anonymous" async></script>
+
+  <script>
+    const fadeElem = document.getElementsByClassName('fade-scroll');
+    var prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function () {
+      const navbar = document.getElementById("navbar");
+      const firstSection = document.getElementById("firstSection");
+      const firstSectionOffsetTop = firstSection.offsetTop - 85;
+      const currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else if (currentScrollPos >= firstSectionOffsetTop) {
+
+        var pos = firstSection.offsetTop - currentScrollPos - 85;
+        if (pos < 0) {
+          navbar.style.top = pos + "px";
+        }
+
+      }
+
+      prevScrollPos = currentScrollPos;
+      if (currentScrollPos >= 85) {
+        navbar.classList.add('navbar-top');
+      } else {
+        navbar.classList.remove('navbar-top');
+      }
+
+      Array.from(fadeElem).forEach((element) => {
+        if (currentScrollPos > element.offsetTop) {
+          element.style = "opacity: " + ((currentScrollPos - element.offsetTop) / 1100);
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggles = document.getElementsByClassName('toggle');
+
+      Array.from(toggles).forEach((el) => {
+        el.addEventListener('click', () => {
+          el.classList.toggle('active');
+        });
+      });
+
+      const ele = document.getElementById('scrolling-wrapper');
+
+      ele.scrollTop = 100;
+      ele.scrollLeft = 0;
+
+
+      let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+      const mouseDownHandler = function (e) {
+        pos = {
+          // The current scroll
+          left: ele.scrollLeft,
+          top: ele.scrollTop,
+          // Get the current mouse position
+          x: e.clientX,
+          y: e.clientY,
+        };
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+
+        ele.style.cursor = 'grabbing';
+        ele.style.userSelect = 'none';
+      };
+
+      const mouseMoveHandler = function (e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+
+        // Scroll the element
+        ele.scrollTop = pos.top - dy;
+        ele.scrollLeft = pos.left - dx;
+      };
+
+      const mouseUpHandler = function () {
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+
+        ele.style.cursor = 'grab';
+        ele.style.removeProperty('user-select');
+      };
+
+      ele.addEventListener('mousedown', mouseDownHandler);
+
+
+    });
+
+  </script>
+
+
+  <script src="./main.js"> </script>
+
+</head>
+
+<body>
+
+  <header class="header" id="navbar">
+    <div class="container">
+      <a href="#">
+        <img class="logo" src="/media/logo.svg" alt="Logo">
+      </a>
+      <nav class="nav">
+        <a href="#expeditions" type="button" class="btn hidden btn-link">Expeditions</a>
+        <a href="#" type="button" class="btn hidden btn-link">About</a>
+        <a href="#" type="button" class="btn hidden btn-outline-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN HERO -->
+  <section class="hero">
+    <div class="hero-content container">
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Polar Expeditions Made Accessible</h1>
+          <h2>Stop dreaming. Start exploring.</h2>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-media-container">
+      <video class="media" playsinline autoplay loop muted>
+        <source src="/media/hero4knew.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img src="/media/hero4k.png" class="media fallback" />
+    </div>
+
+    <div class="scroll-down">
+      <svg class="arrow-circle-down bounce" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1412 897q0-27-18-45l-91-91q-18-18-45-18t-45 18l-189 189v-502q0-26-19-45t-45-19h-128q-26 0-45 19t-19 45v502l-189-189q-19-19-45-19t-45 19l-91 91q-18 18-18 45t18 45l362 362 91 91q18 18 45 18t45-18l91-91 362-362q18-18 18-45zm252-1q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" fill="#fff"></path></svg>  
+    </div>
+      
+  </section>
+
+
+  <!-- FIST SECTION - DOUBLE -->
+  <section class="copy block first-section" id="firstSection">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Discover Europe's last wilderness</h1>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+          <p>
+            A Polar Expedition it doesn't have to be to the North or South pole.
+            There are places much closer to home and less extreme.
+            Northern Sweden is an amazing place that offers beautiful landscapes and is more accessible.
+            It's a place where you can look and not see anything or anyone around you - that's why they call it the
+            Europe's last wilderness.
+          </p>
+          <p>
+            Our Swedish expeditions take place within the Arctic Circle, on the northern section of the Kings Trail Kungsleden (Swedish).
+            The whole trail continues for 440km, but we use the best part of it and it's around 90km.
+          </p>
+          <p>
+            You'll get to experience <b>Kungsleden</b> in an authentic way and recover in comfort.
+            For some it will be once in a lifetime trip, for others a stepping stone towards more challenging
+            expeditions.
+            One thing is guaranteed - it's going to be an unforgettable experience.
+          </p>
+        </div>
+
+        <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
+          <img class="img fade-scrollx" src="/media/kungsledenv.jpeg" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Kungsleden</h1>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+
+          <p>
+            The landscape is very beautiful but we must not forget that the weather can change in a matter of minutes.
+            It can completely shift form a sunny day to a total whiteout. If you don't know where you are and how to
+            behave, you can get yourself in trouble. Luckily you won't be alone and we come well prepared.
+          </p>
+          <p>
+            We use ski's to transport ourselves over the snow, it's like walking with slight glide and it's very easy to learn. 
+            Just putting one foot in front of the other in an environment 
+            allows your mind to go blank at times and it this creates a meditative experience. 
+          </p>
+
+        </div>
+
+        <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
+          <img class="img fade-scrollx" src="/media/map2.png" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- EXPEDITIONS -->
+  <section class="block" id="expeditions">
+    <div class="container">
+      <div class="row pb-0">
+        <div class="col-lg-10 col-sm-12 ">
+          <h1>Ski Touring Expeditions</h1>
+          <p>
+            We currently offer two types of (Nordic) ski touring expeditions in Sweden. Both use the same route and have
+            the same duration.
+            The main difference is accommodation - either huts or tents. Both are unique experiences with their own
+            benefits. The hut tour is more accessible as it requires less gear and is therefore easier to do.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-md-center compare">
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+            <img class="img" src="/media/hut.jpg" />
+            <div class="compare-card-details">
+              <span>8 days</span>
+              <span>90 km</span>
+              <span>Easy</span>
+              <span>4-6 h / day</span>
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Hut Tour<span class="tag">€ 1995,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" />Backpack 10-15 kg </li>
+                <li><img src="/media/check.svg" />We pick up most food along the way</li>
+                <li><img src="/media/check.svg" />Seep in a warm hut</li>
+                <li><img src="/media/check.svg" />Kitchen with a gas stove</li>
+                <li><img src="/media/check.svg" />Sauna included</li>
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-success">I'm interested !</button>
+                <small>1-8 March 2024</small>
+                <small>4 of 5 spots left</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+  
+            <img class="img" src="/media/tent.jpg" />
+
+            <div class="compare-card-details">
+              <span>9 days</span>
+              <span>110 km</span>
+              <span>Medium</span>
+              <span>5-8 h / day</span>
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Winter Camping<span class="tag">€ 2295,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" /> Pulka (sled) 30-45 kg</li>
+                <li><img src="/media/check.svg" /> We carry most of our food</li>
+                <li><img src="/media/check.svg" /> Warm sleeping bag</li>
+                <li><img src="/media/check.svg" /> Expedition stove & fuel to boil water</li>
+                <li><img src="/media/check.svg" /> Develop your Polar Expedition skills</li>
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-success toggle">I'm interested !</button>
+                <small>9-17 March 2024</small>
+                <small>5 spots available</small>
+              </div>
+
+              <form class="signupForm hidden" id="signupCamping" method="post" action="https://formbold.com/s/3nlKp" >  
+                <br>
+                <div class="form-row">
+                  <br><br>
+
+                  <div class="col-12">
+                    <input type="text" name="name" class="form-control" placeholder="Name *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" name="remarks" class="form-control" placeholder="Any questions / remarks">
+                  </div>       
+                  
+                  <div class="col-12">
+                    <input type="hidden" name="expedition" value="camping" />
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <span class="error-message">Something went wrong</span>
+                    <span class="success-message">All good</span>
+                  </div>
+                </div>
+              </form>         
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-10">
+          <p>
+            <small>
+            Choosing huts means we can travel light as we don't need much equipment.
+            Four of the six huts along the trail have a small shop where you can buy food.
+            The last one, technically a mountain station, also has a restaurant.
+            Even when camping, we can choose to spend a night in a hut to warm up, dry clothes and equipment and
+            even use the sauna.
+            </small>
+          </p>
+        </div>        
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+    <!-- BENEFITS -->
+  <section class="special block">
+    <div class="container">
+      <div class="card-container">
+
+        <div class="card special">
+          <h1>Benefits</h1>
+          <p>We want to set you up for success, that's why with Polar Exped - you'll get much, much more.</p>
+          <p>Joining our expeditions comes with a lot of unique benefits. Discover some of them here.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="icon fa-solid fa-person-skiing-nordic"></i>Training Plan</h4>
+          <p>Preparing your body for the expedition is the first step towards success.
+            The better you've trained the more enjoyable your experience will be.
+          </p>
+          <p>
+            We will discuss your current fitness and experience, help you do a realistic assessment and set up a training plan.
+          </p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-regular fa-circle-question"></i></i>Gear Assistance</h4>
+          <p>
+            Having the right gear is important. We will go trough the gear you already have and provide 
+            advice on what you need and where to get it.
+          </p>
+          <p>
+            We don't send out generic copy/paste gear lists and hope for the best, instead we'll make sure you have exactly what you need.
+          </p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-solid fa-cart-shopping"></i>Deals with brands</h4>
+          <p>We're working together with some of the leading equipment
+            brands, manufactures and stores to make sure you can use the best gear possible.
+          </p>
+          <p>In many cases we can offer you a special discount.</p>
+        </div>
+        <div class="card">
+          <h4><i class="icon fa-regular fa-clipboard"></i>Planning & Preparation</h4>
+          <p>
+            <strong>Roald Amundsen</strong>, first man to reach both the North and South Pole said:<br>
+            "<i>Adventure is just bad planning</i>".
+
+            We live by those words. You can count on us to take care of all the preparations so you can just join without worrying about anything.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><i class="icon fa-regular fa-heart"></i>Safety First</h4>
+          <p>
+            Being outside is not without risks, but our focus is keeping everyone safe.
+            <strong>Planning, Gear, Education & Experience.</strong>
+            Those things combined make for a successful expedition.
+          </p>
+          <p>For additional safety we travel in <strong>small groups</strong> of 4-5 participants.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ALTERNATING -->
+  <section class="block hidden">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-sm-12  order-md-2">
+          <h2>Greenland Expedition</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sit quod quibusdam quasi facere repudiandae
+            ab pariatur! Ducimus beatae odio perferendis, esse aspernatur repellendus similique, animi sint cum possimus
+            neque.</p>
+        </div>
+
+        <div class="col-md-6 col-sm-12  order-md-1">
+          <img class="img fade-scroll" src="/media/greenland.png" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h2>Kungsleden</h2>
+          <p>
+            You'll get to experience Europe's last wilderness in an authentic way and recover in comfort.
+            For some it will be once in a lifetime trip, for others a stepping stone towards more challenging
+            expeditions.
+            One thing is guaranteed - it's going to be unforgettable.
+          </p>
+
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Learn More </span>
+          </button>
+
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <img class="img fade-scroll" src="/media/kungsleden.jpeg" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- DAY BY DAY -->
+  <section class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Day by day</h1>
+          <p>A very brief summary of the highlights of the days to come. Focussed on the hut-to-hut tour.
+            The camping expedition follows the same route and a similar schedule. 
+          </p>
+          <div class="scrolling-wrapper" id="scrolling-wrapper">
+
+            <div class="card">
+              <img src="/media/travel.png" height="175px" style="pointer-events: none;"/>
+              
+              <h5>Day 1</h5>
+              <p>In the morning we meet in a city called Kiruna and travel together to Abisko where we will stay for the night.
+              We will spend the afternoon getting comfortable on our skis and with out safety equipment.
+              Kiruna can be reached by train or plane.</p>
+            </div>
+
+            <div class="card">
+              <img class="" src="/media/sings.png" height="175px" />
+              <h5>Day 2</h5>
+              <p>First day on the trail we will travel through Abisko National Park. The first half of it is through a birch forrest,  
+                second part we will cross a frozen lake with Abiskojaure as our destination for the day. 
+                There we will find a small shop, warm huts and a sauna.
+              </p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kungsleden.jpeg" height="175px" />
+              <h5>Day 3</h5>
+              <p>
+                This will be the longest day of the journey so it's very important we start early.
+                The first hour will be on a flat, which will be a good warm up for the not very steep, but quite long uphill that awaits us.
+                Towards the end of the day we will take a break inside King's hut and then continue for few more hours across a frozen lake to Alesjaure.
+                Hot sauna will be our reward.
+              </p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/tjaktja.png" height="175px" />
+              <h5>Day 4</h5>
+              <p>
+                After a long journey the day before, this day will be easier as we're heading to Tjäktja. We will stay at the hut, located half hour away from the pass itself. 
+                This is one of the smaller huts, so there's no shop or sauna, but we do have views of the pass. 
+              </p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/salka.png" height="175px" />
+              <h5>Day 5</h5>
+              <p>The day will start with a relatively mild uphill bringing us to the highest pass on the trail: Tjäktja Pass.
+                Here the views really start to open up and if the weather permits, we will have some of the best views on the trip. 
+                Then we will go down, either fast or zig-zagging slowly. From there is an easy 4 hour cruise to Sälka. Shop & sauna available.
+              </p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/singi.png" height="175px" />
+              <h5>Day 6</h5>
+              <p>Today we travel from Sälka to Singi. It should be an easy day of around 4-5h depending on the weather.
+                The small hills will give you a chance to practice your down-hill technique - that's great fun.
+                Half way we can stop in an emergency shelter to warm up and bit and have a second breakfast - that will give us a boost for the second part of the day.
+              </p>
+            </div>
+            
+            <div class="card">
+              <img class="" src="/media/kebnekeise.png" height="175px" />
+              <h5>Day 7</h5>
+              <p>We start the day with a bit of an uphill and then we will head to Kebnekaise through the valleys. 
+                This day will not be long but it might challenge us with icy terrain. This will be the windiest part 
+                of the trail. Lucky for us, the wind will be in our backs. Still, it's important to stay focussed.
+                Kebnekeise will offer us a comfortable hut, long awaited showers and a fancy meal in a restaurant.
+              </p>
+            </div>
+
+            <div class="card">
+              <img class="" src="/media/snowmobile.png" height="175px" />
+              <h5>Day 8</h5>
+              <p>This is where our expedition will come to an end. After breakfast we will be picked up by a snow mobile that will bring us 
+                to a nearby town called Nikkaluokta, from where we will be transported back to Kiruna. 
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>FAQ</h1>
+        </div>
+        <div class="col-xl-4 offset-xl-1 order-xl-2 col-lg-12">
+          <div class="card faq-aside">
+            <h4>Practical Info</h4>
+            <div>We meet in Kiruna, Sweden. You can travel by plane or train.</div>
+            <div>We meet in Kiruna, Sweden. You can travel by plane or train.</div>
+          </div>
+        </div>
+
+        <div class="col-xl-7 order-xl-1 col-lg-12">
+
+          <div class="faq">
+            <div class="faq-wrapper">
+
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">What gear do I need?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  We want you to have a great time, that's why we will provide you with the best quality ski's and boots.
+                  You will need to take care of your personal clothing like windproof jacket & pants, base layers, gloves etc. 
+                  You will get a detailed gear list and we'll go through your gear together to make sure you have what you need.
+                  If you're going on a hut touring - also a 55-75l backpack and a small 3 season sleeping bag. 
+                  Many things can be rented if you don't have them.
+                </div>
+              </div>
+
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">How much experience is required?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  No skiing experience is required. You can learn what you need in a few hours on the day of arrival.
+                  If you're unsure - get in touch and we can discuss what you could do at home already. 
+                  Think of balance exercises, (ice) skating or indoor skiing. All could be beneficial.
+                  For the camping expeditions, it's best if you have some experience (winter) camping.
+                  Don't hesitate to get in touch to discuss the possibilities.
+                </div>
+              </div>
+
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">What kind of huts do we use?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  The huts are maintained by the Swedish Tourist Association. To stay there we book them and pay just like a hotel.
+                  The rooms are shared and have bunk beds. There are kitchens with gas stoves and even dining rooms. 
+                  We get fresh water from under the ice. 
+                  In contrast, some operators go outside of the season and (to reduce the cost) use the hut's that are meant for emergency use only to stay at.
+                  We do it the right way and actually book and pay for the stay (the price is included). This also gives us the ability to fully use the huts,
+                  use the kitchen and perhaps most important - the sauna. 
+                  As a member of our team you will also get 1 year membership of the Swedish Tourist Association with various benefits.
+                  Our last stay (day 7) will be at Kebnekaise mountain station. The station offers more luxuries like showers.
+                </div>
+              </div>   
+
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">What is included?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  We try to include as much as possible so you don't need to worry about anything.
+                  This list might not be exhaustive. If you have any questions - let us know.
+                  The following is included:<br><br>
+                  <img src="/media/check.svg" />Transfers from and back to Kiruna <br>
+                  <img src="/media/check.svg" />Snowmobile pickup <br>
+                  <img src="/media/check.svg" />All stays in paid STF huts / mountain stations <br>
+                  <img src="/media/check.svg" />1 year Swedish Tourist Association (STF) Membership <br>
+                  <img src="/media/check.svg" />Use of Swedish saunas<br>
+                  <img src="/media/check.svg" />Group Sattelite communication and tracking <br>
+                  <img src="/media/check.svg" />Group safety equipment and first aid kit <br>
+                  <img src="/media/check.svg" />Training plan & gear assistance <br>
+                  <img src="/media/check.svg" />Expedition food <br>
+                  <img src="/media/check.svg" />Use of high quality ski's and ski boots <br>
+                  <img src="/media/check.svg" />Sauna <br>
+                  <img src="/media/check.svg" />Sauna <br><br>
+                  <small></small>
+                </div>
+              </div>          
+              
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">What's not included?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  - Travel by air or train to Abisko, Sweden <br>
+                  - Personal and travel insurance <br>
+                  - Drinks & extra snacks <br>
+                </div>
+              </div>
+
+              <div class="faq-item toggle">
+                <div class="faq-item-header">
+                  <h5 class="faq-item-header-question">What about safety?</h5>
+                  <div class="faq-item-header-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                </div>
+                <div class="faq-item-answer">
+                  Like mentioned before, being outside is not without risks, but our focus is keeping everyone safe and mitigate any potential risks.
+                  We travel during the winter season when the huts are open so that there's support available in case of an emergency. 
+                  They can be contacted via satellite communication devices that we bring.
+                  Your guide has completed a first aid course and the group is carrying a first aid kit. 
+                  Additionally, the guide has knowledge and experience on the specific route and terrain, both in winter and summer. 
+                  During the expedition we're not crossing any glaciers and we avoid any potential avalanche zones. 
+                  The weather is being monitored throughout the winter so we can better understand the snow conditions.
+                  
+                </div>
+              </div>                 
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </section>
+
+
+  <!-- WHY JOIN -->
+  <section class="copy block">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-12">
+          <h1>Why join an expedition?</h1>
+        </div>
+
+        <div class="col-md-8 col-sm-12">
+          <p>
+            Everyone has their own reasons for seeking out a trip like this.
+            During the golden age of exploration, seemingly ordinary men achieved extraordinary things.
+            One of the first two men that stood on top of Everest, Sir Edmund Hillary was a beekeeper by trade.
+            What made them different was the drive for exploration.
+            <br><br>
+            These days our lives are so effortless. We live in cities with everything we might desire available to us.
+            Because of our comforts we loose touch with nature and with ourselves.
+            Literally getting out of your comfort zone can help you reconnect with yourself and nature during the day,
+            while still enjoying the safety and comfort of a hut or tent at night.
+            <br><br>
+            Why do you want to join? Is it the physical and mental challenge? Is it for the scenery, or just some piece and quiet?
+            Get in touch and let us know.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+          <img class="img fade-scrollx" src="/media/ed.jpg" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+    <!-- ABOUT -->
+    <section class="copy block">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <h1>About Polar Exped</h1>
+            <p>
+              lorem              
+            </p>
+          </div>
+  
+          <div class="col-md-8 col-sm-12 order-md-2">
+            <h3>Robert Lewandowski</h3>
+            <p>
+              When not on tour, Robert runs Polar Exped from his home office in Amsterdam.
+              He fell in love with Scandinavia and especially the cold Arctic climate and has been coming back every year. 
+              Wanting to make these experiences accessible to others he founded Polar Exped.
+            </p>
+            <p>
+              Besides touring in Sweden, Robert enjoys climbing in the Alps and mountaineering the Himalayas.
+              Previous climbs include various 4000m peaks around Chamonix Mont Blanc and 6119m summit of Lobuche East, neighboring Mt. Everest. 
+            </p>
+            <p>
+              Currently preparing for Greenland crossing. A 30 day, 600km expedition to cross the Greenlandic Ice Cap on ski's, 
+              unsupported and unassisted, with a team of 5.
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-12 order-md-1">
+            <img class="img fade-scrollx" src="/media/profile.jpeg" />
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  
+
+  <!-- END HERO -->
+  <section class="hero">
+    <div class="hero-content container">
+
+      <div class="row">
+        <div class="col-xl-9 col-lg-12">
+          <h1>Discover the explorer within you</h1>
+          <h2>Join Polar Exped on your next expedition.</h2>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-media-container bcg-1">
+      <img src="/media/kungsleden.jpeg" class="media fade-scroll" />
+    </div>
+  </section>
+
+</body>
+
+</html>
