@@ -111,6 +111,9 @@
   </script>
 
   <script src="./main.js"> </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQL7W7P392"></script>
+
+  <script src="./analytics.js"> </script>
 
 </head>
 
@@ -118,9 +121,7 @@
 
   <header class="header" id="navbar">
     <div class="container">
-      
         <img class="logo" src="/media/logo.svg" alt="Polar Exped Logo">
- 
     </div>
   </header>
 
@@ -137,7 +138,7 @@
     </div>
 
     <div class="hero-media-container">
-      <video class="media" playsinline autoplay loop muted>
+      <video class="media" playsinline autoplay xloop muted>
         <source src="/media/hero4knew.mov" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -173,7 +174,7 @@
             Europe's last wilderness.
           </p>
           <p>
-            Our Swedish expeditions take place within the Arctic Circle, on the northern section of the Kings Trail, Kungsleden in Swedish.
+            Our Swedish expeditions take place within the Arctic Circle, on the northern section of the Kings Trail (Kungsleden in Swedish).
             The whole trail continues for 440km, but we use the best part of it and it's around 90km.
           </p>
           <p>
@@ -185,7 +186,7 @@
         </div>
 
         <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
-          <img class="img fade-scrollx" src="/media/kungsledenv.jpeg" loading="lazy" alt="Kungsleden">
+          <img class="img responsive fade-scrollx" src="/media/kungsledenv.jpeg" loading="lazy" alt="Kungsleden">
         </div>
       </div>
 
@@ -197,13 +198,14 @@
         <div class="col-md-6 col-sm-12  order-md-1">
 
           <p>
+            Kungleden - that's the name of the trail in Sweden along which the expeditions take place. 
             The landscape is very beautiful but we must not forget that the weather can change in a matter of minutes.
             It can completely shift form a sunny day to a total whiteout. If you don't know where you are and how to
             behave, you can get yourself in trouble. Luckily you won't be alone and we come well prepared.
           </p>
           <p>
-            We use Nordic back country ski's to transport ourselves over the snow, it's like walking with slight glide
-            and it's very easy to learn.
+            We use high quality Nordic back country ski's to transport ourselves over the snow, 
+            it's like walking with slight glide and it's very easy to learn.
             Just putting one foot in front of the other in an environment
             allows your mind to go blank at times and it this creates a meditative experience.
           </p>
@@ -211,172 +213,12 @@
         </div>
 
         <div class="col-md-5 col-sm-12   offset-md-1 order-md-2">
-          <img class="img fade-scrollx" src="/media/map2.png" loading="lazy"  alt="Map of Kungsleden">
+          <img class="img responsive" src="/media/map2.png" loading="lazy"  alt="Map of Kungsleden">
         </div>
       </div>
     </div>
 
   </section>
-
-
-  <!-- EXPEDITIONS -->
-  <section class="block" id="expeditions">
-    <div class="container">
-      <div class="row pb-0">
-        <div class="col-lg-10 col-sm-12 ">
-          <h1>Ski Touring Expeditions</h1>
-          <p>
-            We currently offer two types of (Nordic) ski touring expeditions in Sweden. Both use the same route and have
-            the same duration.
-            The main difference is accommodation - either huts or tents. Both are unique experiences with their own
-            benefits. The hut tour is more accessible as it requires less gear and is therefore easier to do.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="row justify-content-md-center compare">
-
-        <div class="col-xl-6 col-md-6 col-sm-12">
-          <div class="compare-card">
-            <img class="img" src="/media/hut.jpg" loading="lazy" alt="Hut accommodation">
-            <div class="compare-card-details">
-              <span>8 days</span>
-              <span>90 km</span>
-              <span>Easy</span>
-              <span>4-6 h / day</span>
-            </div>
-
-            <div class="compare-card-content">
-              <h3>Hut Tour<span class="tag">€ 1995,-</span></h3>
-              <ul>
-                <li><img src="/media/check.svg" alt="checkmark">Backpack 10-15 kg </li>
-                <li><img src="/media/check.svg" alt="checkmark">We pick up most food along the way</li>
-                <li><img src="/media/check.svg" alt="checkmark">Seep in a warm hut</li>
-                <li><img src="/media/check.svg" alt="checkmark">Kitchen with a gas stove</li>
-                <li><img src="/media/check.svg" alt="checkmark">No experience required</li>
-                <li><img src="/media/check.svg" alt="checkmark">Sauna included</li>
-              </ul>
-              <hr>
-              <div class="bottom">
-                <button type="button" class="btn btn-success toggle">I'm interested !</button>
-                <small>1-8 March 2024</small>
-                <small>4 of 5 spots left</small>
-              </div>
-
-              <form class="signupForm hidden" id="formHut" method="post" action="https://formbold.com/s/3nlKp">
-                <br>
-                <div class="form-row">
-                  <br><br>
-
-                  <div class="col-12">
-                    <input type="text" name="name" class="form-control" placeholder="Name *" required>
-                  </div>
-                  <div class="col-6">
-                    <input type="email" name="email" class="form-control" placeholder="Email *" required>
-                  </div>
-                  <div class="col-6">
-                    <input type="text" name="phone" class="form-control" placeholder="Phone number">
-                  </div>
-                  <div class="col-12">
-                    <input type="text" name="remarks" class="form-control" placeholder="Any questions / remarks">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="hidden" name="expedition" value="huts">
-                    <button type="submit" class="btn btn-primary">Send</button>
-                    <span class="error-message">Something is wrong. Please email us <a
-                        href="mailto:info@polarexped.com">info@polarexped.com</a></span>
-                    <span class="success-message">Thank you! We will get back to you shortly</span>
-                  </div>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-6 col-md-6 col-sm-12">
-          <div class="compare-card">
-
-            <img class="img" src="/media/tent.jpg" loading="lazy"  alt="Hilleberg tent">
-
-            <div class="compare-card-details">
-              <span>9 days</span>
-              <span>110 km</span>
-              <span>Medium</span>
-              <span>5-8 h / day</span>
-            </div>
-
-            <div class="compare-card-content">
-              <h3>Winter Camping<span class="tag">€ 2395,-</span></h3>
-              <ul>
-                <li><img src="/media/check.svg" alt="checkmark"> Pulka (sled) 30-45 kg</li>
-                <li><img src="/media/check.svg" alt="checkmark"> We carry most of our food</li>
-                <li><img src="/media/check.svg" alt="checkmark"> Warm sleeping bag</li>
-                <li><img src="/media/check.svg" alt="checkmark"> Expedition stove & fuel to boil water</li>
-                <li><img src="/media/check.svg" alt="checkmark"> Some (winter) camping experience required</li>
-                <li><img src="/media/check.svg" alt="checkmark"> Develop your Polar Expedition skills</li>
-
-              </ul>
-              <hr>
-              <div class="bottom">
-                <button type="button" class="btn btn-success toggle">I'm interested !</button>
-                <small>9-17 March 2024</small>
-                <small>5 spots available</small>
-              </div>
-
-              <form class="signupForm hidden" id="formCamping" method="post" action="https://formbold.com/s/3nlKp">
-                <br>
-                <div class="form-row">
-                  <br><br>
-
-                  <div class="col-12">
-                    <input type="text" name="name" class="form-control" placeholder="Name *" required>
-                  </div>
-                  <div class="col-6">
-                    <input type="email" name="email" class="form-control" placeholder="Email *" required>
-                  </div>
-                  <div class="col-6">
-                    <input type="text" name="phone" class="form-control" placeholder="Phone number">
-                  </div>
-                  <div class="col-12">
-                    <input type="text" name="remarks" class="form-control" placeholder="Any questions / remarks">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="hidden" name="expedition" value="camping">
-                    <button type="submit" class="btn btn-primary">Send</button>
-                    <span class="error-message">Something's wrong. Please email us <a
-                        href="mailto:info@polarexped.com">info@polarexped.com</a></span> <span
-                      class="success-message">Thank you! We will get back to you shortly</span>
-                  </div>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-10">
-          <p>
-            <small>
-              Choosing huts means we can travel light as we don't need much equipment.
-              Four of the six huts along the trail have a small shop where you can buy food.
-              The last one, technically a mountain station, also has a restaurant.
-              Even when camping, we can choose to spend a night in a hut to warm up, dry clothes and equipment and
-              even use the sauna.
-            </small>
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
 
   <!-- BENEFITS -->
   <section class="special block">
@@ -435,7 +277,164 @@
             <strong>Planning, Gear, Education & Experience.</strong>
             Those things combined make for a successful expedition.
           </p>
-          <p>For additional safety we travel in <strong>small groups</strong> of 4-5 participants.</p>
+          <p>For additional safety we travel in <strong>small groups</strong> of max 5 participants.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPEDITIONS -->
+  <section class="block" id="expeditions">
+    <div class="container">
+      <div class="row pb-0">
+        <div class="col-lg-10 col-sm-12 ">
+          <h1>Ski Touring Expeditions</h1>
+          <p>
+            We currently offer two types of (Nordic) ski touring expeditions in Sweden. Both use the same route and have
+            the same duration.
+            The main difference is accommodation - either huts or tents. Both are unique experiences with their own
+            benefits. The hut tour is more accessible as it requires less gear and is therefore easier to do.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-md-center compare">
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+            <img class="img" src="/media/hut.jpg" loading="lazy" alt="Hut accommodation">
+            <div class="compare-card-details">
+              <span>8 days</span>
+              <span>90 km</span>
+              <span>Easy</span>
+              <span>4-6 h / day</span>
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Hut Tour<span class="tag">€ 2195,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" alt="checkmark">Backpack 10-15 kg </li>
+                <li><img src="/media/check.svg" alt="checkmark">We get most food in the huts along the way </li>
+                <li><img src="/media/check.svg" alt="checkmark">Seep in a warm hut</li>
+                <li><img src="/media/check.svg" alt="checkmark">Kitchen with a gas stove</li>
+                <li><img src="/media/check.svg" alt="checkmark">No experience required</li>
+                <li><img src="/media/check.svg" alt="checkmark">Sauna included</li>
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-success toggle">I'm interested !</button>
+                <small>1-8 March 2024</small>
+                <small>&nbsp;</small>
+              </div>
+
+              <form class="signupForm hidden" id="formHut" method="post" action="https://formbold.com/s/3nlKp">
+                <br>
+                <div class="form-row">
+                  <br><br>
+
+                  <div class="col-12">
+                    <input type="text" name="name" class="form-control" placeholder="Name *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" name="remarks" class="form-control" placeholder="Any questions / remarks">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="hidden" name="expedition" value="huts">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <span class="error-message">Something is wrong. Please email us <a
+                        href="mailto:info@polarexped.com">info@polarexped.com</a></span>
+                    <span class="success-message">Thank you! We will get back to you shortly</span>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="compare-card">
+
+            <img class="img" src="/media/tent.jpg" loading="lazy"  alt="Hilleberg tent">
+
+            <div class="compare-card-details">
+              <span>9 days</span>
+              <span>110 km</span>
+              <span>Medium</span>
+              <span>5-8 h / day</span>
+            </div>
+
+            <div class="compare-card-content">
+              <h3>Winter Camping<span class="tag">€ 2495,-</span></h3>
+              <ul>
+                <li><img src="/media/check.svg" alt="checkmark"> Pulka (sled) 30-45 kg</li>
+                <li><img src="/media/check.svg" alt="checkmark"> We carry most of our food</li>
+                <li><img src="/media/check.svg" alt="checkmark"> Warm sleeping bag</li>
+                <li><img src="/media/check.svg" alt="checkmark"> Expedition stove & fuel to boil water</li>
+                <li><img src="/media/check.svg" alt="checkmark"> Some (winter) camping experience required</li>
+                <li><img src="/media/check.svg" alt="checkmark"> Develop your Polar Expedition skills</li>
+
+              </ul>
+              <hr>
+              <div class="bottom">
+                <button type="button" class="btn btn-success toggle">I'm interested !</button>
+                <small>9-17 March 2024</small>
+                <small>&nbsp;</small>
+              </div>
+
+              <form class="signupForm hidden" id="formCamping" method="post" action="https://formbold.com/s/3nlKp">
+                <br>
+                <div class="form-row">
+                  <br><br>
+
+                  <div class="col-12">
+                    <input type="text" name="name" class="form-control" placeholder="Name *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email *" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" name="remarks" class="form-control" placeholder="Any questions / remarks">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="hidden" name="expedition" value="camping">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <span class="error-message">Something's wrong. Please email us <a
+                        href="mailto:info@polarexped.com">info@polarexped.com</a></span> <span
+                      class="success-message">Thank you! We will get back to you shortly</span>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-10">
+          <p>
+            <small>
+              Choosing huts means we can travel light as we don't need much equipment.
+              Four of the six huts along the trail have a small shop where you can buy food.
+              The last one, technically a mountain station, also has a restaurant.
+              Even when camping, we can choose to spend a night in a hut to warm up, dry clothes and equipment and
+              even use the sauna.
+            </small>
+          </p>
         </div>
 
       </div>
@@ -444,7 +443,7 @@
 
 
   <!-- ALTERNATING -->
-  <section class="block hidden">
+  <section class="block special hidden">
 
     <div class="container">
       <div class="row">
@@ -498,7 +497,7 @@
         <div class="col">
           <h1>Day by day</h1>
           <p>A very brief summary of the highlights of the days to come. Focussed on the hut-to-hut tour.
-            The camping expedition follows the same route and a similar schedule.
+            The camping expedition follows the same route and a similar schedule, with one additional day.
           </p>
           <div class="scrolling-wrapper" id="scrolling-wrapper">
 
@@ -613,7 +612,8 @@
               <br><br>
             </div>
             <div>
-              <img src="/media/check.svg" alt="checkmark"> Ski's & boots included <br>
+              <img src="/media/check.svg" alt="checkmark"> High quality gear <br>
+              <img src="/media/check.svg" alt="checkmark"> Skis & boots included <br>
               <img src="/media/check.svg" alt="checkmark"> Food included <br>
               <img src="/media/check.svg" alt="checkmark"> Authentic experience <br>
               <img src="/media/check.svg" alt="checkmark"> Dutch & English speaking guide <br>
@@ -654,8 +654,8 @@
                   </div>
                 </div>
                 <div class="faq-item-answer">
-                  No skiing experience is required. You can learn what you need in a few hours on the day of arrival.
-                  If you're unsure - get in touch and we can discuss what you could do at home already.
+                  No skiing experience is required. You can learn what you need in a few hours on the first day.
+                  If you're unsure - get in touch and we can discuss what you could do at home to prepare.
                   Think of balance exercises, (ice) skating or indoor skiing. All could be beneficial.
                   For the camping expeditions, it's best if you have some experience (winter) camping.
                   Don't hesitate to get in touch to discuss the possibilities.
@@ -675,14 +675,11 @@
                   The rooms are shared and have bunk beds. There are kitchens with gas stoves and even dining rooms.
                   We get fresh water from under the ice.
                   In contrast, some operators go outside of the season and (to reduce the cost) use the hut's that are
-                  meant for emergency use only to stay at.
-                  We do it the right way and actually book and pay for the stay (the price is included). This also gives
-                  us the ability to fully use the huts,
-                  use the kitchen and perhaps most important - the sauna.
-                  As a member of our team you will also get 1 year membership of the Swedish Tourist Association with
-                  various benefits.
-                  Our last stay (day 7) will be at Kebnekaise mountain station. The station offers more luxuries like
-                  showers.
+                  meant for emergency use only to stay at. 
+                  We do it the right way and actually book and pay for the stay (the price is included). 
+                  This also gives us the ability to use all of the facilities like the kitchen and perhaps most important - the sauna.
+                  As a member of our team you will also get 1 year membership of the Swedish Tourist Association with various benefits.
+                  Our last stay (day 7) will be at Kebnekaise mountain station. The station offers more luxuries like hot showers and normal toilets.
                 </div>
               </div>
 
@@ -702,7 +699,7 @@
                   <img src="/media/check.svg" alt="checkmark">All stays in paid STF huts / mountain stations <br>
                   <img src="/media/check.svg" alt="checkmark">1 year Swedish Tourist Association (STF) Membership <br>
                   <img src="/media/check.svg" alt="checkmark">Use of Swedish saunas<br>
-                  <img src="/media/check.svg" alt="checkmark">Group Satellite communication and tracking <br>
+                  <img src="/media/check.svg" alt="checkmark">Group satellite communication and tracking <br>
                   <img src="/media/check.svg" alt="checkmark">Group safety equipment and first aid kit <br>
                   <img src="/media/check.svg" alt="checkmark">Training plan & gear assistance <br>
                   <img src="/media/check.svg" alt="checkmark">Carefully selected expedition food <br>
@@ -719,9 +716,9 @@
                   </div>
                 </div>
                 <div class="faq-item-answer">
-                  - Travel to Abisko, Sweden (Air or Train)<br>
+                  - Travel to Abisko, Sweden (Air or rail)<br>
                   - Personal and travel insurance <br>
-                  - Drinks & extra snacks <br>
+                  - Drinks & snacks <br>
                 </div>
               </div>
 
@@ -735,15 +732,14 @@
                 <div class="faq-item-answer">
                   Like mentioned earlier, being outside is not without risks, but our focus is keeping everyone safe and
                   mitigate any potential risks.
-                  We travel during the winter season when the huts are open so that there's support available in case of
-                  an emergency.
+                  We travel during the winter season when the huts and mountain stations are open so 
+                  that there's support available in case of an emergency.
                   They can be contacted via satellite communication devices that we bring.
                   Your guide has completed a first aid course and the group is carrying a first aid kit.
                   Additionally, the guide has knowledge and experience on the specific route and terrain, both in winter
                   and summer.
                   During the expedition we're not crossing any glaciers and we avoid any potential avalanche zones.
                   The weather is being monitored throughout the winter so we can better understand the snow conditions.
-
                 </div>
               </div>
 
@@ -773,6 +769,33 @@
     </div>
   </section>
 
+  <!-- PARTNERS -->
+  <section class="block special">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Friends & Partners</h1>
+          <p class="text-center">We want to offer you the best possible experience on our expeditions.
+            Because we value high quality equipment, clothing and customer service, 
+            we use and collaborate with some of the leading brands and manufacturers.
+          </p>
+        </div>
+        <div class="col-lg-2 col-4 element"><img class="partner-logo" src="/media/logos/asnes.png" loading="lazy" alt="Asnes"></div>
+        <div class="col-lg-2 col-4 element"><img class="partner-logo" src="/media/logos/hilleberg.png" loading="lazy" alt="Hilleberg"></div>
+        <div class="col-lg-2 col-4 element"><img class="partner-logo" src="/media/logos/alfa.png" loading="lazy" alt="alfa"></div>
+        <div class="col-lg-2 col-4 element">
+          <a href="https://amzn.to/3Q44MwC" target="_blank">
+            <img class="partner-logo" src="/media/logos/fjallraven.png" loading="lazy" alt="Fjallraven">
+          </a>
+        </div>
+        <div class="col-lg-2 col-4 element">
+          <a href="https://www.norrona.com/en-GB/loyalty/?referralCode=D6SQWKPKVH" target="_blank">
+            <img class="partner-logo" src="/media/logos/norrona.png" loading="lazy" alt="Norrona - Sign up and get a discount"></div>
+          </a>
+        <div class="col-lg-2 col-4 element"><img class="partner-logo" src="/media/logos/fischer.png" loading="lazy" alt="Fischer"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- WHY JOIN -->
   <section class="copy block">
@@ -801,7 +824,7 @@
         </div>
 
         <div class="col-md-4 col-sm-12">
-          <img class="img fade-scrollx" src="/media/ed.jpg" loading="lazy"  alt="Edmund Hillary">
+          <img class="img responsive" src="/media/ed.jpg" loading="lazy"  alt="Edmund Hillary">
         </div>
       </div>
     </div>
@@ -816,8 +839,8 @@
         <div class="col-xl-12">
           <h1>About Polar Exped</h1>
           <p>
-            Polar Exped was created to help people explore the polar regions. To make it accessible to those who dream
-            of exploring the polar landscapes
+            Polar Exped was created to help people explore the polar regions. 
+            To make it accessible to people who dream of exploring those beautiful landscapes
             but are not sure how to go about it and where to start.
             It's a whole different world out there and having someone guide you through the whole journey,
             from training, gear,preparation and during the expedition will make the whole experience easier, safer and
@@ -836,28 +859,28 @@
           <p>
             Besides touring in Sweden, Robert enjoys climbing in the Alps and mountaineering the Himalaya.
             Previous climbs include various 4000m peaks around Chamonix Mont Blanc and 6119m summit of Lobuche East,
-            neighboring Mt. Everest.
-            One of future dreams is to ski to the South Pole, Antarctica.
-          </p>
-          <p>
-            Currently Robert is taking part in a 30 day, 600km expedition to cross the Greenlandic Ice Cap on ski's, unsupported and unassisted, with a team of 5.
+            neighboring Mt. Everest. Skiing expeditions have also taken him to the Greenland Ice Cap. 
+            One of the future dreams is to visit Antarctica and ski to the South Pole.
           </p>
         </div>
 
         <div class="col-md-4 col-sm-12 order-md-1">
-          <img class="img fade-scrollx" src="/media/profile.jpeg" loading="lazy" alt="Robert Lewandowski">
+          <img class="img fade-scrollx" src="/media/robert.jpeg" loading="lazy" alt="Robert Lewandowski">
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-12 ">
-          <img class="img fade-scrollx" src="/media/sweden.jpeg" loading="lazy" alt="Robert Lewandowski in Sweden">
+      <div class="row gy-5">
+        <div class="col-md-4 col-6 ">
+          <img class="img fade-scrollx m-b-3" src="/media/profile.jpeg" loading="lazy" alt="Robert Lewandowski in Sweden">
         </div>
-        <div class="col-md-4 col-sm-12 ">
-          <img class="img fade-scrollx" src="/media/lobuche.jpg" loading="lazy" alt="Robert Lewandowski on Lobuche East, Nepal">
+        <div class="col-md-4 col-6">
+          <img class="img fade-scrollx m-b-3" src="/media/lobuche.jpg" loading="lazy" alt="Robert Lewandowski on Lobuche East, Nepal">
         </div>
-        <div class="col-md-4 col-sm-12 ">
+        <div class="col-md-4 col-6">
           <img class="img fade-scrollx" src="/media/chamonix.jpg" loading="lazy"  alt="Robert Lewandowski in Chamonix">
         </div>
+        <div class="col-md-4 col-6 d-md-none">
+          <img class="img fade-scrollx" src="/media/pulka.jpeg" loading="lazy"  alt="Robert Lewandowski in Chamonix">
+        </div>        
       </div>
     </div>
 
