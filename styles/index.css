@@ -633,7 +633,7 @@ button:hover .button-text {
 
 :has(.toggle.active) ~ form {
   visibility: visible;
-  display: block;
+  display: block !important;
 }
 
 @media (max-width: 992px) {
