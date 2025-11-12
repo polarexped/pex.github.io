@@ -6,37 +6,60 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
   <loc>https://www.polarexped.com/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.polarexped.com/expeditions/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.polarexped.com/about/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.polarexped.com/expeditions/kungsleden-hut-tour/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.polarexped.com/expeditions/kungsleden-camping-expedition/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.polarexped.com/expeditions/kungsleden-hut-tour/</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.polarexped.com/expeditions/finse-mini-expedition-experience/</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.polarexped.com/guarantee-sto-garant/</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.polarexped.com/terms-and-conditions/</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.polarexped.com/faq/</loc>
-  <lastmod>2024-11-04T10:15:30+00:00</lastmod>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
+<url>
+  <loc>https://www.polarexped.com/downloads/terms-and-conditions.pdf</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.polarexped.com/expeditions/vinterferie-kungsleden/</loc>
+  <lastmod>2025-11-04T20:42:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
 </urlset>
